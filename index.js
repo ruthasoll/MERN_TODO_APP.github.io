@@ -8,6 +8,10 @@ app.use(express.json())
 
 const PORT = process.env.PORT || 5500;
 
+
+mongoose.connect(process.env.db)
+.then(() => console.log('Database connected'))
+.catch(err => console.log(err))
 app.listen(PORT , () => {
     console.log('Server Connected')
 })
